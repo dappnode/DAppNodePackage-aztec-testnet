@@ -1,0 +1,17 @@
+version: "3.5"
+services:
+  aztec:
+    build:
+      context: .
+      args:
+        UPSTREAM_VERSION: 0.85.0
+    environment:
+      - VALIDATOR_PRIVATE_KEY=
+      - EXECUTION_RPC_URL=http://sepolia-geth.dappnode:8545
+      - CONSENSUS_HOST_URL=http://prysm-sepolia.dappnode:3500
+      - BLOB_SINK_URL=http://34.82.117.158:5052
+    ports:
+      - 8080:8080
+      - 40400:40400
+      - 40400:40400/udp
+    restart: unless-stopped

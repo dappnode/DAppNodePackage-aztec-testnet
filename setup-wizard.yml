@@ -1,0 +1,47 @@
+version: "2"
+fields:
+
+  - id: validator_private_key
+    target:
+      type: environment
+      name: VALIDATOR_PRIVATE_KEY
+      service: aztec
+    title: Validator Private Key
+    description: "Enter your validator's private key (64 hexadecimal characters)"
+    required: true
+    secret: true
+    pattern: "^0x[a-fA-F0-9]{64}$"
+    patternErrorMessage: "Please enter a valid private key (0x followed by 64 hexadecimal characters)"
+
+  - id: blob_sink_url
+    target:
+      type: environment
+      name: BLOB_SINK_URL
+      service: aztec
+    title: Blob Sink Service URL
+    description: "Enter the URL for the blob sink service"
+    required: true
+    pattern: "^https?://[\\w\\-]+(\\.[\\w\\-]+)+([\\w\\-.,@?^=%&:/~+#]*[\\w\\-@?^=%&/~+#])?$"
+    patternErrorMessage: "Please enter a valid URL (e.g., https://example.com)"
+
+  - id: execution_rpc_url
+    target:
+      type: environment
+      name: EXECUTION_RPC_URL
+      service: aztec
+    title: Execution Layer RPC URL
+    description: "Enter the URL for the execution layer RPC endpoint"
+    required: true
+    pattern: "^https?://[\\w\\-]+(\\.[\\w\\-]+)+([\\w\\-.,@?^=%&:/~+#]*[\\w\\-@?^=%&/~+#])?$"
+    patternErrorMessage: "Please enter a valid URL (e.g., https://eth-mainnet.alchemyapi.io/v2/your-api-key)"
+
+  - id: consensus_rpc_url
+    target:
+      type: environment
+      name: CONSENSUS_HOST_URL
+      service: aztec
+    title: Consensus Layer host URL
+    description: "Enter the URL for the consensus layer host endpoint"
+    required: true
+    pattern: "^https?://[\\w\\-]+(\\.[\\w\\-]+)+([\\w\\-.,@?^=%&:/~+#]*[\\w\\-@?^=%&/~+#])?$"
+    patternErrorMessage: "Please enter a valid URL (e.g., https://beacon-api.mainnet.ethpandaops.io)" 
