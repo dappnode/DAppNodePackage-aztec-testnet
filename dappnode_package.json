@@ -11,10 +11,6 @@
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "categories": ["Blockchain", "ETH2.0"],
   "keywords": ["aztec", "validator", "rollup", "privacy"],
-  "dependencies": {
-    "prysm-sepolia.dnp.dappnode.eth": "latest",
-    "sepolia-geth.dnp.dappnode.eth": "latest"
-  },
   "globalEnvs": [
     {
       "envs": [
