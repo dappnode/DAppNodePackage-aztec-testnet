@@ -7,7 +7,7 @@ fields:
       name: VALIDATOR_PRIVATE_KEY
       service: aztec
     title: Validator Private Key
-    description: "Enter your validator's private key (64 hexadecimal characters)"
+    description: "Enter your validator's private key (0x followed by 64 hexadecimal characters). It has to have some ether in it."
     required: true
     secret: true
     pattern: "^0x[a-fA-F0-9]{64}$"

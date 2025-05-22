@@ -12,6 +12,8 @@ services:
       - EXECUTION_RPC_URL=http://geth.sepolia-geth.dappnode:8545
       - CONSENSUS_HOST_URL=http://prysm-sepolia.dappnode:3500
       - BLOB_SINK_URL=
+      - SEQ_MIN_TX_BLOCK=
+      - SEQ_MAX_TX_BLOCK=
     ports:
       - 8080:8080
       - 40400:40400

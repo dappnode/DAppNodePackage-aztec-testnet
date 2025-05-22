@@ -9,8 +9,19 @@ set -euo pipefail
 
 # — Optional environment variables
 BLOB_SINK_ARGS=()
+SEQ_MIN_TX_BLOCK_ARG=()
+SEQ_MAX_TX_BLOCK_ARG=()
+
 if [[ -n "${BLOB_SINK_URL:-}" ]]; then
   BLOB_SINK_ARGS=(--blob-sink "$BLOB_SINK_URL")
+fi
+
+if [[ -n "${SEQ_MIN_TX_BLOCK:-}" ]]; then
+  SEQ_MIN_TX_BLOCK_ARG=(--seqMinTxBlock "$SEQ_MIN_TX_BLOCK")
+fi
+
+if [[ -n "${SEQ_MAX_TX_BLOCK:-}" ]]; then
+  SEQ_MAX_TX_BLOCK_ARG=(--seqMaxTxBlock "$SEQ_MAX_TX_BLOCK")
 fi
 
 # — Build the command array
@@ -25,6 +36,8 @@ CMD=(
   --sequencer.validatorPrivateKey "$VALIDATOR_PRIVATE_KEY"
   --p2p.p2pIp          "$_DAPPNODE_GLOBAL_PUBLIC_IP"
   "${BLOB_SINK_ARGS[@]}"
+  "${SEQ_MIN_TX_BLOCK_ARG[@]}"
+  "${SEQ_MAX_TX_BLOCK_ARG[@]}"
   --archiver
   --node
   --sequencer
