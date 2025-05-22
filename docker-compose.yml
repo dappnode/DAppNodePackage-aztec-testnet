@@ -4,7 +4,7 @@ services:
     build:
       context: .
       args:
-        UPSTREAM_VERSION: 0.85.0-alpha-testnet.5
+        UPSTREAM_VERSION: 0.87.2
     volumes:
       - data:/root
     environment:
