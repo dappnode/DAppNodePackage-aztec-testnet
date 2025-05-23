@@ -19,9 +19,9 @@ services:
       - 40400:40400/tcp
       - 40400:40400/udp
     restart: unless-stopped
-  validator:
+  register:
     build:
-      context: ./validator
+      context: ./register
       args:
         UPSTREAM_VERSION: 0.87.2
     environment:
