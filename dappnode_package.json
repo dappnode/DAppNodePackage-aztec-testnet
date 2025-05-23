@@ -7,7 +7,6 @@
   "description": "Aztec is a privacy first L2 on Ethereum",
   "type": "service",
   "architectures": ["linux/amd64"],
-  "chain": "ethereum",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "categories": ["Blockchain", "ETH2.0"],
   "keywords": ["aztec", "validator", "rollup", "privacy"],
