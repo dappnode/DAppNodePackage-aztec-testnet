@@ -27,7 +27,7 @@ fields:
     target:
       type: environment
       name: VALIDATOR_PRIVATE_KEY
-      service: sequencer
+      service: [sequencer, register]
     title: Validator Private Key
     description: "Private key of testnet L1 EOA that holds Sepolia ETH (0.01 Sepolia ETH can get you started)"
     required: true

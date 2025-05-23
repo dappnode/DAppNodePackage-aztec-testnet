@@ -16,7 +16,7 @@
       "envs": [
         "PUBLIC_IP"
       ],
-      "services": ["aztec"]
+      "services": ["sequencer"]
     }
   ],
   "links": {
