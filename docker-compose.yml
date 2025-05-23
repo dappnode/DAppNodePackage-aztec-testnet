@@ -1,8 +1,8 @@
 version: "3.5"
 services:
-  aztec:
+  sequencer:
     build:
-      context: .
+      context: ./sequencer
       args:
         UPSTREAM_VERSION: 0.87.2
     volumes:
@@ -16,8 +16,18 @@ services:
       - SEQ_MIN_TX_BLOCK=
       - SEQ_MAX_TX_BLOCK=
     ports:
-      - 40400:40400
+      - 40400:40400/tcp
       - 40400:40400/udp
     restart: unless-stopped
+  validator:
+    build:
+      context: ./validator
+      args:
+        UPSTREAM_VERSION: 0.87.2
+    environment:
+      - ETHEREUM_HOSTS=${ETHEREUM_HOSTS:-http://geth.sepolia-geth.dappnode:8545}
+      - VALIDATOR_PRIVATE_KEY=
+      - COINBASE=
+    restart: "no"
 volumes:
   data: {}

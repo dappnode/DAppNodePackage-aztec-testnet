@@ -5,7 +5,7 @@ fields:
     target:
       type: environment
       name: ETHEREUM_HOSTS
-      service: aztec
+      service: sequencer
     title: Ethereum RPC Hosts
     description: "One or more comma-separated public rpc provider url(s)"
     required: true
@@ -16,7 +16,7 @@ fields:
     target:
       type: environment
       name: L1_CONSENSUS_HOST_URLS
-      service: aztec
+      service: sequencer
     title: L1 Consensus Host URLs
     description: "One or more comma-separated public rpc provider url(s) that supports consensus client requests"
     required: true
@@ -27,7 +27,7 @@ fields:
     target:
       type: environment
       name: VALIDATOR_PRIVATE_KEY
-      service: aztec
+      service: sequencer
     title: Validator Private Key
     description: "Private key of testnet L1 EOA that holds Sepolia ETH (0.01 Sepolia ETH can get you started)"
     required: true
@@ -39,7 +39,7 @@ fields:
     target:
       type: environment
       name: COINBASE
-      service: aztec
+      service: [sequencer, register]
     title: Coinbase Address
     description: "Recipient of block rewards (for node security on mainnet, this should be a different address to the validator eoa)"
     required: true
