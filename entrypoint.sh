@@ -2,9 +2,10 @@
 set -euo pipefail
 
 # — Required environment variables
-: "${EXECUTION_RPC_URL?Need to set EXECUTION_RPC_URL}"
-: "${CONSENSUS_HOST_URL?Need to set CONSENSUS_HOST_URL}"
+: "${ETHEREUM_HOSTS?Need to set ETHEREUM_HOSTS}"
+: "${L1_CONSENSUS_HOST_URLS?Need to set L1_CONSENSUS_HOST_URLS}"
 : "${VALIDATOR_PRIVATE_KEY?Need to set VALIDATOR_PRIVATE_KEY}"
+: "${COINBASE?Need to set COINBASE}"
 : "${_DAPPNODE_GLOBAL_PUBLIC_IP?Need to set _DAPPNODE_GLOBAL_PUBLIC_IP (your public IP)}"
 
 # — Optional environment variables
@@ -31,9 +32,10 @@ CMD=(
   /usr/src/yarn-project/aztec/dest/bin/index.js
   start
   --network            "alpha-testnet"
-  --l1-rpc-urls        "$EXECUTION_RPC_URL"
-  --l1-consensus-host-urls "$CONSENSUS_HOST_URL"
+  --l1-rpc-urls        "$ETHEREUM_HOSTS"
+  --l1-consensus-host-urls "$L1_CONSENSUS_HOST_URLS"
   --sequencer.validatorPrivateKey "$VALIDATOR_PRIVATE_KEY"
+  --sequencer.coinbase "$COINBASE"
   --p2p.p2pIp          "$_DAPPNODE_GLOBAL_PUBLIC_IP"
   "${BLOB_SINK_ARGS[@]}"
   "${SEQ_MIN_TX_BLOCK_ARG[@]}"
