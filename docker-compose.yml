@@ -4,7 +4,7 @@ services:
     build:
       context: ./sequencer
       args:
-        UPSTREAM_VERSION: 0.87.2
+        UPSTREAM_VERSION: 5.2.0
     volumes:
       - data:/root
     environment:
