@@ -1,7 +1,7 @@
 {
   "name": "aztec-testnet.public.dappnode.eth",
-  "version": "0.0.87",
-  "upstreamVersion": "v0.87.2",
+  "version": "0.1.0",
+  "upstreamVersion": "5.2.0",
   "upstreamRepo": "AztecProtocol/aztec-packages",
   "upstreamArg": "UPSTREAM_VERSION",
   "description": "Aztec is a privacy first L2 on Ethereum",
